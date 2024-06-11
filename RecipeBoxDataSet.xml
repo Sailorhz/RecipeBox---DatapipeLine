@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is the root element of the XML document, named "RecipeBox". This attribute specifies the location of the XML Schema Definition (XSD) file that defines the structure and constraints for the "RecipeBox" document. In this case, it points to the RecipeBoxSchema.xsd file. -->
+<RecipeBox xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="RecipeBoxSchema.xsd">
+   <!-- This snippet provides details about a single customer within the "RecipeBox" document. -->
+   <!-- This tag indicates the beginning of a "Customer" element. -->
+    <Customer> 
+        <Name>Tom Hiddleston</Name>
+        <Gender>Male</Gender>
+        <Birthday>1981-02-09</Birthday>
+        <Email>Tom.Hiddleston@example.com</Email>
+        <PhoneNo>123-456-7890</PhoneNo>
+        <Address>123 Main St, West End, London</Address>
+        <!-- This tag indicates the beginning of an "Order" element. A customer can have multiple orders. -->
+        <Order>
+            <!-- indicates the beginning of a "Content" element within the order. Each "Content" element represents a specific recipe and its quantity in the order. -->
+            <Content>
+                <!-- specifies the ID of the recipe included in the order. -->
+                <RecipeId>R1</RecipeId>
+                <!-- specifies the quantity of the recipe included in the order. -->
+                <Quantity>2</Quantity>
+            </Content>
+            <Content>
+                <RecipeId>R2</RecipeId>
+                <Quantity>1</Quantity>
+            </Content>
+            <!-- indicates the beginning of a "Delivery" element within the order. It provides details about the delivery of the order. -->
+            <Delivery>
+                <!-- the delivery date of the order, which is March 9th, 2024. -->
+                <DeliveryDate>2024-03-09</DeliveryDate>
+                <!-- specifies the delivery service used for the order. -->
+                <DeliveryService>Delivery Express</DeliveryService>
+                <!-- specifies the status of the delivery, which is "Received". -->
+                <Status>Received</Status>
+            </Delivery>
+        </Order>
+        <Order>
+            <Content>
+                <RecipeId>R1</RecipeId>
+                <Quantity>2</Quantity>
+            </Content>
+            <Content>
+                <RecipeId>R2</RecipeId>
+                <Quantity>1</Quantity>
+            </Content>
+            <Delivery>
+                <DeliveryDate>2024-03-11</DeliveryDate>
+                <DeliveryService>Delivery Co.</DeliveryService>
+                <Status>Received</Status>
+            </Delivery>
+        </Order>
+        <Order>
+            <Content>
+                <RecipeId>R3</RecipeId>
+                <Quantity>3</Quantity>
+            </Content>
+            <Delivery>
+                <DeliveryDate>2024-03-15</DeliveryDate>
+                <DeliveryService>Delivery Express</DeliveryService>
+                <Status>Received</Status>
+            </Delivery>
+        </Order>
+    </Customer>
+
+    <Customer>
+        <Name>Rebecca Ferguson</Name>
+        <Gender>Female</Gender>
+        <Birthday>1983-10-19</Birthday>
+        <Email>rf@example.com</Email>
+        <PhoneNo>987-654-3210</PhoneNo>
+        <Address>456 Oak St, Stockholm</Address>
+        <Order>
+            <Content>
+                <RecipeId>R1</RecipeId>
+                <Quantity>3</Quantity>
+            </Content>
+            <Delivery>
+                <DeliveryDate>2024-03-10</DeliveryDate>
+                <DeliveryService>Delivery Co.</DeliveryService>
+                <Status>Received</Status>
+            </Delivery>
+        </Order>
+        <Order>
+            <Content>
+                <RecipeId>R8</RecipeId>
+                <Quantity>3</Quantity>
+            </Content>
+            <Delivery>
+                <DeliveryDate>2024-03-12</DeliveryDate>
+                <DeliveryService>Delivery Co.</DeliveryService>
+                <Status>Received</Status>
+            </Delivery>
+        </Order>
+        <Order>
+            <Content>
+                <RecipeId>R1</RecipeId>
+                <Quantity>1</Quantity>
+            </Content>
+            <Content>
+                <RecipeId>R8</RecipeId>
+                <Quantity>6</Quantity>
+            </Content>
+            <Content>
+                <RecipeId>R3</RecipeId>
+                <Quantity>3</Quantity>
+            </Content>
+            <Delivery>
+                <DeliveryDate>2024-03-18</DeliveryDate>
+                <DeliveryService>Delivery Co.</DeliveryService>
+                <Status>Ordered</Status>
+            </Delivery>
+        </Order>
+    </Customer>
+
+    <Customer>
+        <Name>Sam wills</Name>
+        <Gender>Male</Gender>
+        <Birthday>1990-01-01</Birthday>
+        <Email>samw@example.com</Email>
+        <PhoneNo>234-456-7890</PhoneNo>
+        <Address>123 Main St, Anytown, USA</Address>
+        <Order>
+            <Content>
+                <RecipeId>R1</RecipeId>
+                <Quantity>2</Quantity>
+            </Content>
+            <Content>
+                <RecipeId>R3</RecipeId>
+                <Quantity>1</Quantity>
+            </Content>
+            <Delivery>
+                <DeliveryDate>2024-03-09</DeliveryDate>
+                <DeliveryService>Delivery Co.</DeliveryService>
+                <Status>Received</Status>
+            </Delivery>
+        </Order>
+    </Customer>
+
+    <Customer>
+        <Name>Linda Pitt</Name>
+        <Gender>Female</Gender>
+        <Birthday>1983-05-15</Birthday>
+        <Email>linda.pitt@example.com</Email>
+        <PhoneNo>988-654-3210</PhoneNo>
+        <Address>50 Hackney St, Othertown, USA</Address>
+        <Order>
+            <Content>
+                <RecipeId>R3</RecipeId>
+                <Quantity>3</Quantity>
+            </Content>
+            <Delivery>
+                <DeliveryDate>2024-03-10</DeliveryDate>
+                <DeliveryService>Delivery Express</DeliveryService>
+                <Status>Received</Status>
+            </Delivery>
+        </Order>
+        <Order>
+            <Content>
+                <RecipeId>R4</RecipeId>
+                <Quantity>2</Quantity>
+            </Content>
+            <Content>
+                <RecipeId>R5</RecipeId>
+                <Quantity>1</Quantity>
+            </Content>
+            <Delivery>
+                <DeliveryDate>2024-03-11</DeliveryDate>
+                <DeliveryService>Delivery Co.</DeliveryService>
+                <Status>Received</Status>
+            </Delivery>
+        </Order>
+    </Customer>
+
+    <Customer>
+        <Name>Alice Johnson</Name>
+        <Gender>Female</Gender>
+        <Birthday>1995-08-20</Birthday>
+        <Email>alice.johnson@example.com</Email>
+        <PhoneNo>111-222-3333</PhoneNo>
+        <Address>789 Elm St, Another Town, USA</Address>
+        <Order>
+            <Content>
+                <RecipeId>R4</RecipeId>
+                <Quantity>2</Quantity>
+            </Content>
+            <Content>
+                <RecipeId>R5</RecipeId>
+                <Quantity>2</Quantity>
+            </Content>
+            <Delivery>
+                <DeliveryDate>2024-03-11</DeliveryDate>
+                <DeliveryService>Delivery Co.</DeliveryService>
+                <Status>Received</Status>
+            </Delivery>
+        </Order>
+        <Order>
+            <Content>
+                <RecipeId>R7</RecipeId>
+                <Quantity>2</Quantity>
+            </Content>
+            <Content>
+                <RecipeId>R10</RecipeId>
+                <Quantity>2</Quantity>
+            </Content>
+            <Content>
+                <RecipeId>R9</RecipeId>
+                <Quantity>1</Quantity>
+            </Content>
+            <Delivery>
+                <DeliveryDate>2024-03-17</DeliveryDate>
+                <DeliveryService>Delivery Co.</DeliveryService>
+                <Status>Received</Status>
+            </Delivery>
+        </Order>
+    </Customer>
+
+    <Customer>
+        <Name>Bob Miller</Name>
+        <Gender>Male</Gender>
+        <Birthday>1980-12-10</Birthday>
+        <Email>bob.miller@example.com</Email>
+        <PhoneNo>444-555-6666</PhoneNo>
+        <Address>321 Maple Ave, Cityville, USA</Address>
+        <Order>
+            <Content>
+                <RecipeId>R6</RecipeId>
+                <Quantity>3</Quantity>
+            </Content>
+            <Delivery>
+                <DeliveryDate>2024-03-12</DeliveryDate>
+                <DeliveryService>Delivery Express</DeliveryService>
+                <Status>Received</Status>
+            </Delivery>
+        </Order>
+    </Customer>
+
+    <Customer>
+        <Name>Emily Brown</Name>
+        <Gender>Female</Gender>
+        <Birthday>1992-04-15</Birthday>
+        <Email>emily.brown@example.com</Email>
+        <PhoneNo>999-888-7777</PhoneNo>
+        <Address>456 Pine St, Smalltown, USA</Address>
+        <Order>
+            <Content>
+                <RecipeId>R7</RecipeId>
+                <Quantity>2</Quantity>
+            </Content>
+            <Content>
+                <RecipeId>R8</RecipeId>
+                <Quantity>1</Quantity>
+            </Content>
+            <Delivery>
+                <DeliveryDate>2024-03-13</DeliveryDate>
+                <DeliveryService>Delivery Express</DeliveryService>
+                <Status>Received</Status>
+            </Delivery>
+        </Order>
+    </Customer>
+
+    <Customer>
+        <Name>Michael Davis</Name>
+        <Gender>Male</Gender>
+        <Birthday>1995-11-22</Birthday>
+        <Email>michael.davis@example.com</Email>
+        <PhoneNo>333-444-5555</PhoneNo>
+        <Address>789 Oak St, Countryside, USA</Address>
+        <Order>
+            <Content>
+                <RecipeId>R8</RecipeId>
+                <Quantity>3</Quantity>
+            </Content>
+            <Delivery>
+                <DeliveryDate>2024-03-14</DeliveryDate>
+                <DeliveryService>Delivery Co.</DeliveryService>
+                <Status>Received</Status>
+            </Delivery>
+        </Order>
+    </Customer>
+
+    <Customer>
+        <Name>Longyin Couppey</Name>
+        <Gender>Female</Gender>
+        <Birthday>1983-02-20</Birthday>
+        <Email>l.couppey@example.com</Email>
+        <PhoneNo>338-999-6666</PhoneNo>
+        <Address>789 Avenue Pateur, Paris</Address>
+        <Order>
+            <Content>
+                <RecipeId>R1</RecipeId>
+                <Quantity>2</Quantity>
+            </Content>
+            <Delivery>
+                <DeliveryDate>2024-03-05</DeliveryDate>
+                <DeliveryService>Collection Point</DeliveryService>
+                <Status>Received</Status>
+            </Delivery>
+        </Order>
+        <Order>
+            <Content>
+                <RecipeId>R6</RecipeId>
+                <Quantity>2</Quantity>
+            </Content>
+            <Content>
+                <RecipeId>R7</RecipeId>
+                <Quantity>2</Quantity>
+            </Content>
+            <Delivery>
+                <DeliveryDate>2024-03-12</DeliveryDate>
+                <DeliveryService>Collection Point</DeliveryService>
+                <Status>Received</Status>
+            </Delivery>
+        </Order>
+    </Customer>
+
+    <Customer>
+        <Name>Austin Butler</Name>
+        <Gender>Male</Gender>
+        <Birthday>1991-08-17</Birthday>
+        <Email>Austin.B@example.com</Email>
+        <PhoneNo>333-765-8999</PhoneNo>
+        <Address>2002 N Main St, Santa Ana, CA, USA</Address>
+        <Order>
+            <Content>
+                <RecipeId>R7</RecipeId>
+                <Quantity>2</Quantity>
+            </Content>
+            <Content>
+                <RecipeId>R8</RecipeId>
+                <Quantity>2</Quantity>
+            </Content>
+            <Content>
+                <RecipeId>R9</RecipeId>
+                <Quantity>2</Quantity>
+            </Content>
+            <Delivery>
+                <DeliveryDate>2024-03-14</DeliveryDate>
+                <DeliveryService>Collection Point</DeliveryService>
+                <Status>Received</Status>
+            </Delivery>
+        </Order>
+    </Customer>
+<!-- This tag indicates the beginning of a "Recipe" element. -->
+    <Recipe>
+        <!-- specifies the ID of the recipe, which is "R1" -->
+        <Id>R1</Id>
+        <!-- specifies the title or name of the recipe. -->
+        <Title>Spaghetti Bolognese</Title>
+        <Price>9.99</Price>
+        <!-- provides a description of the recipe, highlighting its main ingredients and style. -->
+        <Description>Classic Italian dish with meat sauce and pasta.</Description>
+        <!-- These elements list the ingredients required to make the recipe.  -->
+        <Ingredient>spaghetti</Ingredient>
+        <Ingredient>garlic</Ingredient>
+        <Ingredient>Ground beef</Ingredient>
+        <Ingredient>tomatoes</Ingredient>
+        <Ingredient>onions</Ingredient>
+        <!-- specifies the vegan category of the recipe. In this case, it's marked as "None", indicating that it's not vegan. -->
+        <VeganCategory>None</VeganCategory>
+        <!-- specifies the health category of the recipe. In this case, it's marked as "None", indicating no specific health category. -->
+        <HealthCategory>None</HealthCategory>
+        <!-- indicates the beginning of a "Review" element within the recipe. Each review provides feedback from a customer. -->
+        <Review>
+            <!-- specifies the email address of the customer who provided the review. -->
+            <CustomerEmail>Tom.Hiddleston@example.com</CustomerEmail>
+            <!-- specifies the rating given by the customer for the recipe. In this case, it's rated as 4 out of 5. -->
+            <Rating>4</Rating>
+             <!-- contains the text of the review, where the customer expresses their opinion about the recipe. -->
+            <Text>Delicious! Loved the flavor.</Text>
+        </Review>
+        <Review>
+            <CustomerEmail>jane.smith@example.com</CustomerEmail>
+            <Rating>5</Rating>
+            <Text>Amazing taste! Will order again.</Text>
+        </Review>
+    </Recipe>
+
+    <Recipe>
+        <Id>R2</Id>
+        <Title>Vegan Salad</Title>
+        <Price>7.49</Price>
+        <Description>Fresh and healthy salad with mixed greens and veggies.</Description>
+        <Ingredient>Lettuce</Ingredient>
+        <Ingredient>tomatoes</Ingredient>
+        <Ingredient>Cucumbers</Ingredient>
+        <Ingredient>Carrots</Ingredient>
+        <Ingredient>Dressing</Ingredient>
+        <VeganCategory>Vegan</VeganCategory>
+        <HealthCategory>LowFat</HealthCategory>
+        <Review>
+            <CustomerEmail>Tom.Hiddleston@example.com</CustomerEmail>
+            <Rating>4</Rating>
+            <Text>Delicious! Loved the flavor.</Text>
+        </Review>
+        <Review>
+            <CustomerEmail>jane.smith@example.com</CustomerEmail>
+            <Rating>5</Rating>
+            <Text>Amazing taste! Will order again.</Text>
+        </Review>
+    </Recipe>
+
+    <Recipe>
+        <Id>R3</Id>
+        <Title>Spaghetti Carbonara</Title>
+        <Price>12.99</Price>
+        <Description>Classic Italian pasta dish with bacon, eggs, and cheese.</Description>
+        <Ingredient>Pasta</Ingredient>
+        <Ingredient>Eggs</Ingredient>
+        <Ingredient>Bacon</Ingredient>
+        <VeganCategory>None</VeganCategory>
+        <HealthCategory>None</HealthCategory>
+        <Review>          
+            <CustomerEmail>samw@example.com</CustomerEmail>
+            <Rating>5</Rating>
+            <Text>Delicious and easy to make!</Text>
+        </Review>
+        <Review>
+            <CustomerEmail>linda.pitt@example.com</CustomerEmail>
+            <Rating>3</Rating>
+            <Text>Well, it is not my plate. But, I do appreciate the delivery service.</Text>
+        </Review>
+    </Recipe>
+
+    <Recipe>
+        <Id>R4</Id>
+        <Title>Chicken Alfredo</Title>
+        <Price>15.99</Price>
+        <Description>Rich and creamy pasta dish with grilled chicken and Alfredo sauce.</Description>
+        <Ingredient>Pasta</Ingredient>
+        <Ingredient>Chicken</Ingredient>
+        <Ingredient>Alfredo Sauce</Ingredient>
+        <VeganCategory>None</VeganCategory>
+        <HealthCategory>None</HealthCategory>
+        <Review>
+            <CustomerEmail>alice.johnson@example.com</CustomerEmail>
+            <Rating>4</Rating>
+            <Text>Very tasty, but a bit heavy!</Text>
+        </Review>
+    </Recipe>
+    <Recipe>
+        <Id>R5</Id>
+        <Title>Vegetarian Pizza</Title>
+        <Price>10.99</Price>
+        <Description>Delicious pizza topped with fresh vegetables and cheese.</Description>
+        <Ingredient>Pizza dough</Ingredient>
+        <Ingredient>Tomatoes</Ingredient>
+        <Ingredient>Mushrooms</Ingredient>
+        <Ingredient>Onions</Ingredient>
+        <Ingredient>Green peppers</Ingredient>
+        <Ingredient>Olives</Ingredient>
+        <VeganCategory>Vegetarian</VeganCategory>
+        <HealthCategory>None</HealthCategory>
+        <Review>
+            <CustomerEmail>linda.pitt@example.com</CustomerEmail>
+            <Rating>3</Rating>
+            <Text>Not very easy to cook as what I thought. </Text>
+        </Review>
+    </Recipe>
+    <Recipe>
+        <Id>R6</Id>
+        <Title>Grilled Salmon</Title>
+        <Price>18.99</Price>
+        <Description>Grilled salmon fillet served with a side of roasted vegetables.</Description>
+        <Ingredient>Salmon fillet</Ingredient>
+        <Ingredient>Olive oil</Ingredient>
+        <Ingredient>Lemon</Ingredient>
+        <Ingredient>Asparagus</Ingredient>
+        <Ingredient>Zucchini</Ingredient>
+        <Ingredient>Carrots</Ingredient>
+        <VeganCategory>None</VeganCategory>
+        <HealthCategory>LowCarb</HealthCategory>
+        <Review>
+            <CustomerEmail>l.couppey@example.com</CustomerEmail>
+            <Rating>5</Rating>
+            <Text>Love Salmon!</Text>
+        </Review>
+    </Recipe>
+    <Recipe>
+        <Id>R7</Id>
+        <Title>Vegetable Stir-Fry</Title>
+        <Price>11.99</Price>
+        <Description>Fresh vegetables stir-fried in a savory sauce, served over rice.</Description>
+        <Ingredient>Rice</Ingredient>
+        <Ingredient>Broccoli</Ingredient>
+        <Ingredient>Carrots</Ingredient>
+        <Ingredient>Snow peas</Ingredient>
+        <Ingredient>Bell peppers</Ingredient>
+        <Ingredient>Onions</Ingredient>
+        <VeganCategory>Vegan</VeganCategory>
+        <HealthCategory>LowFat</HealthCategory>
+        <Review>
+            <CustomerEmail>alice.johnson@example.com</CustomerEmail>
+            <Rating>4</Rating>
+            <Text>My friend likes it.</Text>
+        </Review>
+    </Recipe>
+    <Recipe>
+        <Id>R8</Id>
+        <Title>Chocolate Cake</Title>
+        <Price>14.99</Price>
+        <Description>Decadent chocolate cake topped with rich chocolate frosting.</Description>
+        <Ingredient>Flour</Ingredient>
+        <Ingredient>Sugar</Ingredient>
+        <Ingredient>Cocoa powder</Ingredient>
+        <Ingredient>Eggs</Ingredient>
+        <Ingredient>Milk</Ingredient>
+        <Ingredient>Butter</Ingredient>
+        <VeganCategory>None</VeganCategory>
+        <HealthCategory>None</HealthCategory>
+        <Review>
+            <CustomerEmail>emily.brown@example.com</CustomerEmail>
+            <Rating>5</Rating>
+            <Text>Amazing cake, loved it!</Text>
+        </Review>
+    </Recipe>
+
+    <Recipe>
+        <Id>R9</Id>
+        <Title>Classic Apple Pie</Title>
+        <Price>13.99</Price>
+        <Description>Traditional apple pie with a flaky, golden crust and a warm, cinnamon-spiced apple filling.</Description>
+        <Ingredient>All-purpose flour</Ingredient>
+        <Ingredient>Butter</Ingredient>
+        <Ingredient>Granulated sugar</Ingredient>
+        <Ingredient>Apples (such as Granny Smith or Honeycrisp)</Ingredient>
+        <Ingredient>Lemon juice</Ingredient>
+        <Ingredient>Cinnamon</Ingredient>
+        <Ingredient>Nutmeg</Ingredient>
+        <VeganCategory>None</VeganCategory>
+        <HealthCategory>None</HealthCategory>
+        <Review>
+            <CustomerEmail>Austin.B@example.com</CustomerEmail>
+            <Rating>5</Rating>
+            <Text>Nice pie, good one to share with friends.</Text>
+        </Review>
+    </Recipe>
+    <Recipe>
+        <Id>R10</Id>
+        <Title>Vanilla Bean Ice Cream</Title>
+        <Price>10.99</Price>
+        <Description>Creamy and indulgent vanilla bean ice cream made with real vanilla beans for a rich flavor.</Description>
+        <Ingredient>Heavy cream</Ingredient>
+        <Ingredient>Whole milk</Ingredient>
+        <Ingredient>Granulated sugar</Ingredient>
+        <Ingredient>Egg yolks</Ingredient>
+        <Ingredient>Vanilla bean</Ingredient>
+        <Ingredient>Salt</Ingredient>
+        <VeganCategory>None</VeganCategory>
+        <HealthCategory>None</HealthCategory>
+        <Review>
+            <CustomerEmail>alice.johnson@example.com</CustomerEmail>
+            <Rating>5</Rating>
+            <Text>Everyone love it!</Text>
+        </Review>
+    </Recipe>
+</RecipeBox>

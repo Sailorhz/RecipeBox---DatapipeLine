@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <!-- Defines a complex type named "RecipeType".Indicates that 4 elements defined within it  -->
+  <xs:complexType name="RecipeType">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:ID"/>
+      <xs:element name="Title" type="xs:string"/>
+      <xs:element name="Price" type="xs:decimal"/>
+      <!-- Defines an element named "Description". -->
+      <xs:element name="Description">
+        <!-- Specifies application-specific information about the element. -->
+          <xs:annotation>
+            <xs:appinfo>Description</xs:appinfo>
+            <!-- Provides human-readable documentation about the element. -->
+            <xs:documentation>Description</xs:documentation>
+          </xs:annotation>
+      </xs:element>
+      <!-- Defines an element named "Ingredient" which can occur one or more times (minOccurs="1" maxOccurs="unbounded") -->
+      <xs:element name="Ingredient" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="VeganCategory">
+        <!-- Defines a simple type (enumeration) for the "VeganCategory" element. -->
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="None"/>
+            <xs:enumeration value="Vegetarian"/>
+            <xs:enumeration value="Vegan"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Defines an element named "HealthCategory"  -->
+      <xs:element name="HealthCategory">
+        <!-- Defines a simple type (enumeration) for the "HealthCategory" element. -->
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="LowFat"/>
+            <xs:enumeration value="LowCarb"/>
+            <xs:enumeration value="None"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Defines an element named "Review" which can occur zero or more times, each containing data of type "ReviewType" representing reviews of the recipe. -->
+      <xs:element name="Review" type="ReviewType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+<!-- Defines a complex type named "ReviewType". having <rating> 1to 5 with it and also having text review with it.  -->
+  <xs:complexType name="ReviewType">
+    <xs:sequence>
+      <xs:element name="CustomerEmail" type="xs:string"/>
+      <xs:element name="Rating">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="4"/>
+            <xs:enumeration value="5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Text">
+        <xs:annotation>
+            <xs:appinfo>Text</xs:appinfo>
+            <xs:documentation>Text</xs:documentation>
+          </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+<!-- Defines a complex type named "CustomerType". -->
+  <xs:complexType name="CustomerType">
+    <xs:sequence>
+      <!-- Defines an element named "Name" of type xs:string, representing the name of the customer. -->
+      <xs:element name="Name" type="xs:string"/>
+      <xs:element name="Gender">
+        <!-- Defines a simple type (enumeration) for the "Gender" element. -->
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Male"/>
+            <xs:enumeration value="Female"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Birthday" type="xs:date"/>
+      <xs:element name="Email">
+         <!-- Defines a simple type (restriction) for the "Email" element. -->
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <!-- Specifies a regular expression pattern that matches email addresses. -->
+            <xs:pattern value="[^@]+@[^\.]+\..+"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PhoneNo" type="xs:string"/>
+      <xs:element name="Address" type="xs:string"/>
+      <xs:element name="Order" type="OrderType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+<!-- Defines a complex type named "OrderType". -->
+  <xs:complexType name="OrderType">
+    <xs:sequence>
+      <!-- Defines an element named "Content" of type "ContentType". It can occur one or more times (minOccurs="1" and maxOccurs="unbounded"). -->
+      <xs:element name="Content" type="ContentType" minOccurs="1" maxOccurs="unbounded"/>   
+      <xs:element name="Delivery" type="DeliveryType"/>
+    </xs:sequence>
+  </xs:complexType>
+<!-- Defines a complex type named "DeliveryType". -->
+  <xs:complexType name="DeliveryType">
+    <xs:sequence>
+      <xs:element name="DeliveryDate" type="xs:date"/>
+      <xs:element name="DeliveryService">
+        <!-- Specifies a simple type (enumeration) for the "DeliveryService" element. -->
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Delivery Co."/>
+            <xs:enumeration value="Delivery Express"/>
+            <xs:enumeration value="Collection Point"/>
+          </xs:restriction>
+        </xs:simpleType>
+       </xs:element>
+      <xs:element name="Status">
+        <!-- Specifies a simple type (enumeration) for the "Status" element. -->
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Ordered"/>
+            <xs:enumeration value="Prepared"/>
+            <xs:enumeration value="Departed"/>
+            <xs:enumeration value="Received"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+<!-- Declares a complex type named "ContentType". -->
+  <xs:complexType name="ContentType">
+    <xs:sequence>
+      <xs:element name="RecipeId" type="xs:string"/>
+      <xs:element name="Quantity" type="xs:positiveInteger"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Root -->
+  <xs:element name="RecipeBox">
+
+    <xs:complexType>
+      <xs:sequence>
+        <!-- Defines an element named "Customer" with a type of "CustomerType". It can occur zero or more times within "RecipeBox". same as "RecipeType" -->
+        <xs:element name="Customer" type="CustomerType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="Recipe" type="RecipeType" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence> 
+    </xs:complexType>
+
+    <!-- Key is defined here (using Id) to enforce uniqueness -->
+      <xs:key name="RecipeKey">
+        <xs:selector xpath="RecipeBox/Recipe"/>
+        <xs:field xpath="Id"/>
+      </xs:key>
+      <!-- A keyref is defined to link RecipeId in Order/Content to Id in Recipe -->
+      <xs:keyref name="RecipeRef" refer="RecipeKey">
+        <xs:selector xpath="RecipeBox/Customer/Order/Content"/>
+        <xs:field xpath="RecipeId"/>
+      </xs:keyref>
+      <!-- Key is defined here (using Email) to enforce uniqueness -->
+      <xs:key name="CustomerEmailKey">
+        <xs:selector xpath="RecipeBox/Customer"/>
+        <xs:field xpath="Email"/>
+      </xs:key>
+      <!-- A keyref is defined to link CustomerEmail in ReviewType to Email in CustomerType -->
+      <xs:keyref name="CustomerEmailRef" refer="CustomerEmailKey">
+        <xs:selector xpath="RecipeBox/Recipe/Reviews"/>
+        <xs:field xpath="CustomerEmail"/>
+      </xs:keyref>
+  </xs:element>
+ 
+ </xs:schema>

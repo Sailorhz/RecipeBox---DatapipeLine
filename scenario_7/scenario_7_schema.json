@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "A brief schema to structured the customer part of recipebox data",
+  // Specifies the type of the root object, which is "object".
+  "type": "object",
+  // Defines the properties of the "RecipeBox" object
+  "properties": {
+    "RecipeBox": {
+      "type": "object",
+      "properties": {
+        // Defines the "Customer" property, which is an array containing individual customer objects.
+        "Customer": {
+          // Specifies the type of the "Customer" property, which is "array".
+          "type": "array",
+          // Defines the schema for the items in the "Customer" array.
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "Name": {
+                  "type": "string"
+                },
+                "Gender": {
+                  "type": "string",
+                  // define the allowed values for the "Gender" property. It means that the "Gender" property can only have values either "Female" or "Male" 
+                  "enum": ["Female", "Male"] 
+                },
+                "Birthday": {
+                  "type": "string", 
+                  "format": "date"
+                },
+                "Email": {
+                  "type": "string", 
+                  "format": "email"
+                },
+                // Specifies that the length of the phone number string should be betweem 10 to 20 characters.
+                "PhoneNo": {
+                  "type": "string",
+                  "minLength": 10,
+                  "maxLength": 20, 
+                  // Defines a regular expression pattern that the phone number string should match.
+                  "pattern": "^?([0-9]{3})?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$"
+                },
+                "Address": {
+                  "type": "string"
+                },
+                // defined as an array, indicating that there can be multiple orders, each represented by an object within this array.
+                "Order": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        // as an array, an order can contain multiple items. Each item is represented by an object within this array.
+                        "Content": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "RecipeId": {
+                                  "type": "string"
+                                  
+                                },
+                                // specifying that the quantity must be between 1 and 100.
+                                "Quantity": {
+                                  "type": "integer",
+                                  "minimum": 1,
+                                  "Maximum":100
+                                }
+                              },
+
+                              // specify that both "RecipeId" and "Quantity" properties are required for each object within the "Content" array
+                              "required": [
+                                "RecipeId",
+                                "Quantity"
+                              ]
+                            }
+                          ]
+                        },
+                        "Delivery": {
+                          "type": "object",
+                          "properties": {
+                            "DeliveryDate": {
+                              "type": "string",
+                              "format": "date"
+                            },
+                            // the allowed delivery services are "Delivery Co.", "Delivery Express", and "Collection Point".
+                            "DeliveryService": {
+                              "type": "string",
+                              "enum": ["Delivery Co.","Delivery Express","Collection Point"]
+                            },
+                            // the allowed statuses are "Ordered", "Prepared", "Departed", and "Received".
+                            "Status": {
+                              "type": "string",
+                              "enum": ["Ordered","Prepared","Departed","Received"]
+                            }
+                          },
+                          // specify that all three properties ("DeliveryDate", "DeliveryService", and "Status") are required for the "Delivery" object. 
+                          "required": [
+                            "DeliveryDate",
+                            "DeliveryService",
+                            "Status"
+                          ]
+                        }
+                      },
+                      // every order object must contain both "Content" and "Delivery" properties
+                      "required": [
+                        "Content",
+                        "Delivery"
+                      ]
+                    }
+                  ]
+                }
+              },
+
+              // Specifies the required properties for each customer object.
+              "required": [
+                "Name",
+                "Gender",
+                "Birthday",
+                "Email",
+                "PhoneNo",
+                "Address",
+                "Order"
+              ],
+              // indicating that only the defined properties are allowed for each customer object.
+                            "additionalItems": false 
+            }
+          ]
+        }
+      },
+      "required": [
+        "Customer"
+      ]
+    }
+  },
+  "required": [
+    "RecipeBox"
+  ]
+}

@@ -1,0 +1,56 @@
+
+// Top 5 Customers who place most orders
+
+// {} containing a key-value pair where the key is "Customer" and the value is an array [].
+{
+
+    "Customer": [
+      
+      // Inside the "Customer" array, there are customer objects, each enclosed within {}.
+		{ 
+			"Name": "Tom Hiddleston",
+			"Gender": "Male",
+			"Birthday": "1981-02-09",
+			"Email": "Tom.Hiddleston@example.com",
+			"PhoneNo": "123-456-7890",
+			"Address": "123 Main St, West End, London",
+		},
+
+		{ 
+			"Name": "Rebecca Ferguson",
+			"Gender": "Female",
+			"Birthday": "1983-10-19",
+			"Email": "rf@example.com",
+			"PhoneNo": "987-654-3210",
+			"Address": "456 Oak St, Stockholm",
+		},
+
+		{ 
+			"Name": "Linda Pitt",
+			"Gender": "Female",
+			"Birthday": "1983-05-15",
+			"Email": "linda.pitt@example.com",
+			"PhoneNo": "988-654-3210",
+			"Address": "50 Hackney St, Othertown, USA",
+		},
+
+		{ 
+			"Name": "Alice Johnson",
+			"Gender": "Female",
+			"Birthday": "1995-08-20",
+			"Email": "alice.johnson@example.com",
+			"PhoneNo": "111-222-3333",
+			"Address": "789 Elm St, Another Town, USA",
+		},
+
+		{ 
+			"Name": "Longyin Couppey",
+			"Gender": "Female",
+			"Birthday": "1983-02-20",
+			"Email": "l.couppey@example.com",
+			"PhoneNo": "338-999-6666",
+			"Address": "789 Avenue Pateur, Paris"
+		}
+
+	]
+}
